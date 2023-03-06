@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+body {
+    background: rgba(162, 167, 158, 0.596);
+}
+
+#container {
+    height: 100vh;
+}
+
+header {
+    font-size: 2.2rem;
+    background: #A2A79E;
+    color: rgba(0, 0, 0, 0.822);
+    text-align: center;
+}
+
+header h1::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca .7s infinite;
+}
+
+@keyframes pisca {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+#form {
+    background: #ffffff;
+    border: 1px solid #331;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+#input {
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    background: #ffffff;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+#btn {
+    font-size: 1.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.ajuda {
+    padding-left: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: #ffff00;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.ajuda::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #ffff00;
+    position: absolute;
+    top: -15px;
+}
+
+#filmes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+#erro {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #331;
+}
+
+#filmes img {
+    width: 100%;
+    transition: 0.2s ease-in-out;
+}
+
+#filmes img:hover {
+    transform: scale(1.07);
+    margin-bottom: 10px;
+}
+
+#filmes p {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+#filmes div {
+    border: 2px solid #A2A79E;
+    padding: 10px;
+    max-width: 324px; 
+    margin: 0 auto; 
+}
+
+
+@media (max-width: 1000px) {
+    #filmes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    #filmes {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
